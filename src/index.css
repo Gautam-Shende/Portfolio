@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3B82F6;
+  --dark: #0F172A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  transition: all 0.3s ease;
+}
+
+.dark body {
+  background-color: #0F172A;
+  color: #E2E8F0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Section Styles */
+.section {
+  @apply py-20;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-center mb-6 relative;
+}
+
+.section-title::after {
+  @apply content-[''] absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-primary rounded-full;
+}
+
+/* Animation delays */
+[data-aos-delay="100"] {
+  transition-delay: 100ms;
+}
+
+[data-aos-delay="200"] {
+  transition-delay: 200ms;
+}
+
+[data-aos-delay="300"] {
+  transition-delay: 300ms;
+}
+
+/* Custom components */
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-600 shadow-lg hover:shadow-primary/40;
+}
+
+.btn-outline {
+  @apply border border-primary text-primary hover:bg-primary hover:text-white;
+}
